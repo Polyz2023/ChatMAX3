@@ -49,6 +49,6 @@ io.on('connection', (socket) => {
     });
 
     socket.on('sendM', (data)=>{
-      io.sockets.emit('getM', {txt: data.msg, name:data.name, hr:data.h, mn:data.m, st: data.isT, ii:data.i});
+      io.sockets.emit('getM', {txt: data.msg, name:data.name, hr:data.h, mn:data.m, st: data.isT, ii:data.i, cont:data.cc});
     });
 });
