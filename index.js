@@ -43,6 +43,10 @@ io.on('connection', (socket) => {
     });
 
     socket.on('sendM', (data)=>{
-      io.sockets.emit('getM', {txt: data.msg, name:data.name, hr:data.h, mn:data.m, st: data.isT, ii:data.i, cont:data.cc});
+      io.sockets.emit('getM', {txt: data.msg, name:data.name, hr:data.h, mn:data.m, st: data.isT, ii:data.i, cont:data.cc, r:data.r});
+    });
+
+    socket.on('reaction', (index) => {
+      io.emit('reaction', index); // Транслируйте событие всем клиентам
     });
 });
